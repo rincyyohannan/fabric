@@ -154,7 +154,8 @@ func (t *SimpleChaincode) Invoke(stub shim.ChaincodeStubInterface) pb.Response {
 		return t.delete(stub, args)
 	} else if function == "readMarble" { //read a marble
 		return t.readMarble(stub, args)
-	
+	} else if function == "queryMarblesByOwner" { //find marbles for owner X using rich query
+		return t.queryMarblesByOwner(stub, args)
 	} else if function == "queryMarbles" { //find marbles based on an ad hoc rich query
 		return t.queryMarbles(stub, args)
 	} else if function == "getHistoryForMarble" { //get history of values for a marble
