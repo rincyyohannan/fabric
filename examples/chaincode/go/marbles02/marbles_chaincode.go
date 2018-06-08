@@ -144,9 +144,8 @@ func (t *SimpleChaincode) Invoke(stub shim.ChaincodeStubInterface) pb.Response {
 	fmt.Println("invoke is running " + function)
 
 	// Handle different functions
-	if function == "initMarble" { //create a new marble
-		return t.initMarble(stub, args)
-	} else if function == "transferMarble" { //change owner of a specific marble
+	
+	if function == "transferMarble" { //change owner of a specific marble
 		return t.transferMarble(stub, args)
 	} else if function == "transferMarblesBasedOnColor" { //transfer all marbles of a certain color
 		return t.transferMarblesBasedOnColor(stub, args)
